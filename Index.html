@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>ui design</title>
+ 
+  
+
+  <style>
+  html{
+   scroll-behavior:smoth;
+  }
+   body{
+    margin: 0;
+    box-sizing: border-box;
+    height: 300vh;
+    width: 100%;
+    padding: 0;
+    background: #41436A;
+    
+   }
+   header{
+    height: 100vh;
+   
+   }
+   h1{
+    font-family: Verdana;
+    color: #f54768;
+   }
+   .links{
+    display: flex;
+    flex-direction: row;
+   
+    margin:5px ;
+    font-size: 1.1rem;
+    font-family: Monospace;
+   }
+   @media(max-width:400px){
+    .links{
+     display:flex;
+     flex-direction: column;
+    }
+   }
+   .links a{
+     text-decoration: none;
+     margin: 5px;
+     color: #ff9677;
+   }
+  
+   .pro-picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     width: 200px;
+     height: 200px;
+     float: right;
+   
+     
+   }
+   img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:50% ;
+   }
+  #contact{
+   color: black;
+     background: linear-gradient(to  top, #41436A,#974063);
+   }
+   #contact h1{
+    background-color: red;
+   }9
+   #top{
+    position: absolute;
+    background: none;
+    color: grey;
+    font-size: 23px;
+    bottom: 5px;
+    right:5px ;
+    z-index: 3;
+    border: none;
+    display: none;
+    animation: move-top 3s infinite ;
+   }
+   @keyframes move-top{
+    from{
+    font-size: 20px;
+     
+    }
+       to{
+     bottom: 60px;
+   
+    }
+   }
+  </style>
+ </head>
+ <body>
+  <header id="Home">
+    <h1 class="alert alert-primary">My portfolios </h1>
+    <div class="links list-group">
+    <a href="#Home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact me</a>
+    </div>
+    <div class="pro-picture">
+      <img src="../Code editer/nat.jpg" alt="load error" />
+    </div>
+  </header>
+   <header id="about">
+    <h1>I am developer</h1>
+    <div class="links">
+    <a href="#Home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact me</a>
+     <h1 id="clock"></h1>
+    </div>
+  </header>
+  <header id="contact">
+    <h1>This Contact</h1>
+   <div class="links">
+    <a href="#Home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact me</a>
+    </div>
+  </header>
+  <a href="#Home" id="top">⬆️</a>
+ </body>
+ <script>
+  const topbtn=document.getElementById('top')
+  window.addEventListener('scroll',function(){
+     //console.log(window.pageYOffset)
+     const offset=window.pageYOffset
+  
+     if(offset>300){
+      topbtn.style.display="block"
+    }
+    else{
+      topbtn.style.display="none"
+    }
+     
+    }) 
+    var m=1
+ const cl=document.getElementById('clock')
+    function rotate() {
+    
+   m++
+     var i= new Date()
+  
+    cl.innerText=i.toLocaleString()+""+m
+    if(m==100){
+     m=0
+    }
+    }
+ setInterval(rotate,100)
+ 
+ </script>
+</html>
