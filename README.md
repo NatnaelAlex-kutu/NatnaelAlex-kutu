@@ -1,2 +1,2 @@
-//this only for practice hoew to use 
+//this only for practice how to use 
 git 
